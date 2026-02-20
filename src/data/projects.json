@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "title": "Ethereal E-Commerce",
+    "description": "A high-performance luxury storefront featuring seamless page transitions.",
+    "longDescription": [
+      "Built end-to-end for a luxury fashion house, this storefront redefines the online shopping experience. Animations are 60fps-guaranteed through will-change and GSAP quickTo paired with Next.js ISR.",
+      "Each product page features a scroll-driven reveal sequence that contextualizes garments within editorial photography, blurring the border between fashion magazine and retail UX.",
+      "Cart and checkout flows are optimized through Zustand micro-state management, ensuring zero re-render jank on add-to-cart interactions."
+    ],
+    "role": "Lead Frontend Developer",
+    "tech": ["Next.js", "GSAP", "Tailwind CSS"],
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Neon Agency",
+    "description": "An award-winning creative agency portfolio with WebGL elements.",
+    "longDescription": [
+      "Designed to stand out in a saturated agency landscape, this portfolio uses a full-bleed WebGL canvas as its primary navigation device — each section is a 3D room the user navigates through.",
+      "Custom cursor logic fuses with the Three.js render loop for real-time displacement effects on hover. The overall system achieves 60fps on mid-range hardware through aggressive instanced mesh batching.",
+      "Typography was treated as a sculptural material — variable fonts and kinetic type animations convey the agency's experimental edge without sacrificing legibility."
+    ],
+    "role": "UI Engineer",
+    "tech": ["React", "Three.js", "Framer Motion"],
+    "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1567359781514-3b964e2b04d6?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "FinTech Dashboard",
+    "description": "Dark-mode first dashboard with live data visualization and animated components.",
+    "longDescription": [
+      "A trading terminal reimagined for the post-Web2 era. Every data point enters the viewport with a spring-based entrance so users feel the momentum behind live financial information.",
+      "D3.js charts are driven by a WebSocket feed, with GSAP handling all transitional states between data updates. The result eliminates the jarring 'hard cut' common in financial UIs.",
+      "Accessibility was a first-class concern: all interactive elements meet WCAG 2.1 AA, and the motion system respects prefers-reduced-motion via a global GSAP config hook."
+    ],
+    "role": "Frontend Developer",
+    "tech": ["Vue", "D3.js", "Tailwind CSS"],
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Artisan Bakery",
+    "description": "Sensory-rich landing page for a local bakery with scroll-triggered storytelling.",
+    "longDescription": [
+      "A single-page narrative experience for a boutique Parisian bakery. The scroll is the journey: flour dust particles, slow-motion dough-kneading video, and parallax product shots create an immersive atmosphere.",
+      "Performance was a constraint — the entire page under 300KB. Achieved via heavy asset compression, blur-up placeholders, and deferred video loading triggered by IntersectionObserver.",
+      "The result saw a 340% increase in online orders following launch, proving that sensory storytelling directly translates to conversion."
+    ],
+    "role": "Freelance Developer",
+    "tech": ["HTML/CSS", "GSAP", "Lenis"],
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586444248902-2f64eddc13df?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Crypto Wallet UI",
+    "description": "Performant crypto wallet with 3D coin interactions and live charts.",
+    "longDescription": [
+      "A non-custodial wallet interface that makes DeFi accessible. 3D coin models rotate in response to real-time price movements — green tilt on gain, red tilt on loss — giving users an immediate, embodied sense of their portfolio health.",
+      "The chart system is built on canvas via Chart.js with a custom GSAP tick driver, ensuring smooth price-feed animations without layout thrash from React state updates.",
+      "Security UI patterns were carefully designed to build trust: progressive disclosure, clear consent states, and transaction confirmation flows with animated feedback at each step."
+    ],
+    "role": "Frontend Engineer",
+    "tech": ["React", "Three.js", "Tailwind CSS"],
+    "image": "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=2069&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Zenith Architecture",
+    "description": "Architectural firm portfolio with minimal layouts and horizontal scroll.",
+    "longDescription": [
+      "Zenith's portfolio demanded the same precision as their buildings. A strict 8-point grid governs every element, while generous whitespace forces the photography to breathe and command attention.",
+      "The horizontal scroll journey uses GSAP ScrollTrigger to pin and progress through each project, with subtle parallax depth applied to the building photography for spatial realism.",
+      "The typography system pairs Cormorant Garamond for display with Neue Haas Grotesk for captions, creating an editorial tension that mirrors the firm's balance of classical heritage and modernist ambition."
+    ],
+    "role": "Creative Developer",
+    "tech": ["Next.js", "Framer Motion", "GSAP"],
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1496307653780-42ee777d4833?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Midnight Music App",
+    "description": "Experimental streaming platform with audio-reactive visuals.",
+    "longDescription": [
+      "Midnight is an underground music discovery platform where the UI breathes with the track. Web Audio API analyses frequency bands in real-time, and CSS hue-rotate and GSAP scale transforms react to the bass, mid, and treble channels.",
+      "The genre navigation system uses a radial force-directed graph built on D3, letting users 'gravity slingshot' between musical genres through drag physics.",
+      "Playback state is stored in a Zustand store that hydrates from a Service Worker cache, enabling gapless track transitions even on flaky mobile connections."
+    ],
+    "role": "Lead Developer",
+    "tech": ["Vanilla JS", "Web Audio API", "WebGL"],
+    "image": "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=2069&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1484755560615-a4c64e778a6c?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Eco-Travel Journal",
+    "description": "Editorial travel magazine with continuous smooth scroll and parallax.",
+    "longDescription": [
+      "A digital travel journal for a sustainability-first adventure brand. Lenis smooth scroll transforms the reading experience into a meditative journey, with parallax layers giving each destination page cinematic depth.",
+      "Nuxt Content drives the editorial pipeline, allowing non-technical editors to publish rich-media articles without engineering involvement. Images auto-optimize through Nuxt Image with adaptive breakpoints.",
+      "Carbon footprint transparency is baked in: a subtle footer widget tracks the page's CO2 cost in real-time per session, matching the brand's commitment to environmental accountability."
+    ],
+    "role": "Frontend Developer",
+    "tech": ["Vue", "Nuxt.js", "Tailwind CSS"],
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Lumina Skincare",
+    "description": "Luxury E-Commerce with Shopify Hydrogen and 3D product rendering.",
+    "longDescription": [
+      "Lumina required a buying experience as refined as their product line. Shopify Hydrogen provides the e-commerce backbone while a custom Three.js renderer brings product bottles to life with HD lighting and rotation.",
+      "The ingredient story section uses a scroll-driven chemistry visualization: molecular structures animate as the user reads the formulation narrative, building scientific trust through visual authenticity.",
+      "Add-to-cart and mini-cart interactions were choreographed frame-by-frame using GSAP Flip, maintaining spatial orientation between product and cart states."
+    ],
+    "role": "UI/UX Engineer",
+    "tech": ["React", "Hydrogen", "GSAP"],
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1974&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Neural Interface",
+    "description": "AI-powered SaaS dashboard with animated data pipelines and generative UI.",
+    "longDescription": [
+      "A frontier AI company's core product interface. The challenge was communicating complex model inference pipelines in a way non-engineers could intuitively grasp. Animated node graphs with spring-physics edges solve this.",
+      "Generative UI elements respond to the AI output stream in real-time — text tokens animate in character-by-character via SplitText, and confidence intervals visualize as fluid morphing shapes.",
+      "The design system was built in Figma then translated to a token-driven component library in Storybook, ensuring pixel-perfect consistency across 200+ components."
+    ],
+    "role": "Staff Frontend Engineer",
+    "tech": ["Next.js", "SplitText", "GSAP"],
+    "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Obsidian Studio",
+    "description": "Dark editorial photography portfolio with particle effects and depth-of-field blur.",
+    "longDescription": [
+      "Obsidian Studio is a high-end commercial photography studio whose digital presence needed to match the impeccability of their work. A particle dust system rendered on canvas provides atmospheric depth without distracting from the imagery.",
+      "Gallery navigation uses a custom momentum scroll built on Pointer Events — swipe velocity translates directly to scroll kinetic energy, giving touch users an organic, natural-feeling experience.",
+      "The image loading sequence uses a sequential blur-up technique: first a 20px wide thumbnail pixelates the placeholder, then the full image dissolves in. This was preferred over skeleton screens for its editorial feel."
+    ],
+    "role": "Creative Developer",
+    "tech": ["Vanilla JS", "Canvas API", "Lenis"],
+    "image": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504703395950-b89145a5425b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Atlas Motion",
+    "description": "Motion design studio portfolio with GSAP timeline-driven case studies.",
+    "longDescription": [
+      "Atlas Motion's portfolio is itself a motion design artefact. Every scroll interaction is choreographed on a master GSAP timeline — sections enter with stagger, color grades shift between project moods, and typography animates like a reel.",
+      "The case study format breaks the standard scroll. Each project has its own 'scene' with nested ScrollTriggers that compose micro-animations — letterforms animate in rhythm with motion reels playing in the background.",
+      "Built for performance: the reel videos use HEVC on Safari and VP9 everywhere else, auto-detected via media source extensions. Total time-to-interactive on 4G: under 2.8 seconds."
+    ],
+    "role": "Frontend Developer",
+    "tech": ["React", "GSAP", "ScrollTrigger"],
+    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1974&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1535016120720-40c646be5580?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Terroir Wine Club",
+    "description": "Wine subscription service with sensory scroll design and sommelier AI.",
+    "longDescription": [
+      "Terroir's digital cellar needed to evoke the ritual of wine discovery. A slow, intentional parallax scroll moves through a virtual vineyard before arriving at the selection interface — geography before product.",
+      "An integrated sommelier AI recommends pairings based on natural language input. The chat interface uses streaming tokens via Server-Sent Events with character-by-character GSAP SplitText reveals.",
+      "Wine label photography is hero-formatted with a subtle CSS grain filter and sepia toning controlled by scroll position. As you scroll deeper, labels emerge from aged barrel darkness to bright table light."
+    ],
+    "role": "Freelance Developer",
+    "tech": ["Next.js", "AI SDK", "Framer Motion"],
+    "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1452784444945-3f422708fe5e?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Satellite CMS",
+    "description": "Headless CMS interface with drag-and-drop page builder and live preview.",
+    "longDescription": [
+      "Satellite is a modern headless CMS targeting marketing teams at scale. The page builder uses GSAP Flip to animate block reordering — blocks teleport with spring physics instead of jarring reflows.",
+      "A live preview panel syncs to the editor state via WebSocket, giving content editors instant visual feedback across device breakpoints simultaneously. The dual-pane layout was carefully benchmarked to maintain 60fps during typing.",
+      "The permission system's UI communicates access levels through spatial metaphors: blocks 'lock' with a visual latch animation, and restricted areas dim with a frosted glass overlay — immediately legible without a permissions tooltip."
+    ],
+    "role": "UI Engineer",
+    "tech": ["React", "GSAP Flip", "Radix UI"],
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14431b4?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1555066931-4365d14431b4?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Polar Expedition",
+    "description": "Immersive documentary experience for an Arctic exploration film.",
+    "longDescription": [
+      "A companion digital experience for a feature-length Arctic documentary. The site is a journey: a vertical scroll mimics the film's narrative arc from coastal departure to polar icefields.",
+      "360° panoramic images at key narrative moments use a custom WebGL equirectangular viewer — mouse movement rotates the view, creating a sense of presence within the footage.",
+      "Chapters are gated behind an ambient audio experience that users must 'unlock' by holding a key — a deliberate moment of quiet intention before the next sequence, mirroring the film's meditative pacing."
+    ],
+    "role": "Interactive Developer",
+    "tech": ["Three.js", "GSAP", "Howler.js"],
+    "image": "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=2059&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1476610182048-b716b8518aae?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1418985991508-e47386d96a71?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Hyperion Games",
+    "description": "AAA game studio marketing site with WebGL world and controller navigation.",
+    "longDescription": [
+      "Hyperion's site is a game in itself. A fully explorable Three.js scene serves as the home page — users navigate with WASD or controller input, discovering trailers and lore embedded in the 3D environment.",
+      "Particle systems respond to cursor proximity with repulsion physics, making the hero environment feel alive and reactive. The overall render pipeline targets 60fps on integrated graphics via LOD management and occlusion culling.",
+      "The mobile fallback abandons three.js entirely and delivers a cinematic scroll experience with optimized poster images and CSS clip-path reveal animations — both paths feel intentional, not degraded."
+    ],
+    "role": "Senior Creative Developer",
+    "tech": ["Three.js", "React", "WebGL GLSL"],
+    "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1462206092226-f46025ffe607?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Eden Healthcare",
+    "description": "Healthcare patient portal with accessible motion and calm visual system.",
+    "longDescription": [
+      "Healthcare UX demands a paradox: calm but responsive, informative but not overwhelming. Eden's patient portal achieves this through a muted color system, breathing animations, and generous reading typography.",
+      "Every animation in the system has a reduced-motion variant generated from the same GSAP tween definitions by wrapping gsap.config with a global matchMedia hook. Same code path, two experiences.",
+      "Form interactions use micro-affirmations — subtle checkmarks and color shifts — to reduce the anxiety of medical data entry. Tested with patients across three clinics before launch."
+    ],
+    "role": "Frontend Engineer",
+    "tech": ["Next.js", "GSAP", "Radix UI"],
+    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Veil Fashion Week",
+    "description": "Live runway stream platform with real-time voting and look-book generation.",
+    "longDescription": [
+      "Built in three weeks for Paris Fashion Week, Veil handled 50,000 concurrent viewers watching a live runway stream while voting on each look in real-time. The voting UI updates live via WebSocket with optimistic UI for zero-latency feel.",
+      "Between shows, the look-book builder lets viewers assemble their favorite looks into a personal digital magazine — drag-and-drop layout with GSAP Flip orchestrating the reorder animations.",
+      "The entire frontend was deployed to the edge via Vercel Edge Functions with Durable Objects for real-time state, achieving sub-100ms global latency for vote tally updates during peak live moments."
+    ],
+    "role": "Lead Frontend Engineer",
+    "tech": ["Next.js", "WebSockets", "GSAP Flip"],
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2076&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1475180098004-ca77a66827be?q=80&w=1200&auto=format&fit=crop"
+    ]
+  }
+]

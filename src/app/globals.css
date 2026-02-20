@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* NEUTRES */
+  --neutral-dark-lighter: #2a2a2a;
+  --neutral-dark-base:    #111111; /* Quasi-black main background */
+  --neutral-dark-darker:  #050505; /* Deepest black for shadows/borders */
+
+  --neutral-light-lighter:#ffffff; /* Source Foreground */
+  --neutral-light-base:   #e5e6fe; /* Source Bright Cyan - utilisé comme blanc cassé */
+  --neutral-light-darker: #8e8e8e; /* Source Bright Black */
+
+  /* ACCENTS */
+  /* Accent 1 - Mint */
+  --accent-mint-lighter:  #9efbd5;
+  --accent-mint-base:     #3bf1ac; /* Source Accent */
+  --accent-mint-darker:   #2aab7a;
+
+  /* Accent 2 - Corail */
+  --accent-coral-lighter: #ffc4bd; /* Source Bright Red */
+  --accent-coral-base:    #ff6b6b; /* Source Normal Red */
+  --accent-coral-darker:  #c94545;
+
+  /* Accent 3 - Pervenche */
+  --accent-perv-lighter:  #d9daff;
+  --accent-perv-base:     #b6b7ff; /* Source Normal Cyan */
+  --accent-perv-darker:   #7e7fdb;
+
+  /* Accent 4 - Jaune */
+  --accent-yellow-lighter:#fefdd5; /* Source Bright Yellow */
+  --accent-yellow-base:   #ffe85d; /* Source Normal Yellow */
+  --accent-yellow-darker: #cdb930;
+
+  --background: var(--neutral-light-lighter);
+  --foreground: var(--neutral-dark-base);
 }
 
 @theme inline {
+  --color-neutral-dark-lighter: var(--neutral-dark-lighter);
+  --color-neutral-dark-base: var(--neutral-dark-base);
+  --color-neutral-dark-darker: var(--neutral-dark-darker);
+  
+  --color-neutral-light-lighter: var(--neutral-light-lighter);
+  --color-neutral-light-base: var(--neutral-light-base);
+  --color-neutral-light-darker: var(--neutral-light-darker);
+  
+  --color-accent-mint-lighter: var(--accent-mint-lighter);
+  --color-accent-mint-base: var(--accent-mint-base);
+  --color-accent-mint-darker: var(--accent-mint-darker);
+  
+  --color-accent-coral-lighter: var(--accent-coral-lighter);
+  --color-accent-coral-base: var(--accent-coral-base);
+  --color-accent-coral-darker: var(--accent-coral-darker);
+  
+  --color-accent-perv-lighter: var(--accent-perv-lighter);
+  --color-accent-perv-base: var(--accent-perv-base);
+  --color-accent-perv-darker: var(--accent-perv-darker);
+  
+  --color-accent-yellow-lighter: var(--accent-yellow-lighter);
+  --color-accent-yellow-base: var(--accent-yellow-base);
+  --color-accent-yellow-darker: var(--accent-yellow-darker);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Typography System */
+h1, h2 {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.03em;
+}
+
+/* Display variant for expressive sections */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-body), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Base Utility Classes for Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* GSAP Helper Classes */
+.gsap-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Premium V3 Util Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.noise-bg {
+  position: relative;
+}
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1;
 }
