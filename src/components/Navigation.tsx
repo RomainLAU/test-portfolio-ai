@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const links = [
   { name: "Home", href: "/" },
@@ -19,7 +21,6 @@ function smoothScrollTo(href: string) {
   }
   const id = href.replace("#", "");
   const el = document.getElementById(id);
-  // Ensure the element actually exists and we use smooth scrolling
   if (el) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -37,37 +38,9 @@ function AnimatedLink({
   index: number;
   setRef: (el: HTMLAnchorElement | null) => void;
 }) {
-  const textWrapperRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseEnter = () => {
-    if (textWrapperRef.current) {
-      gsap.to(textWrapperRef.current, { yPercent: -50, duration: 0.4, ease: "power3.inOut" });
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (textWrapperRef.current) {
-      gsap.to(textWrapperRef.current, { yPercent: 0, duration: 0.4, ease: "power3.inOut" });
-    }
-  };
-
   return (
-    <div 
-      style={{ 
-        overflow: "hidden", 
-        height: "1em", 
-        fontSize: "clamp(3rem, 10vw, 8rem)",
-        fontWeight: "900",
-        textTransform: "uppercase",
-        lineHeight: 1,
-        display: "inline-block",
-        width: "fit-content",
-        padding: "0.1em 0.2em", // give magnetic hit area a bit of breathing room
-        margin: "-0.1em -0.2em"
-      }}
-      // Put the mouse/magnetic events on the stable wrapper context, not the inner animated A tag
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+    <motion.div 
+      className="overflow-hidden h-[1em] text-[clamp(3rem,10vw,8rem)] font-black uppercase leading-none inline-block w-fit px-[0.2em] py-[0.1em] -mx-[0.2em] -my-[0.1em]"
       data-cursor="pointer"
       data-magnetic
     >
@@ -77,20 +50,23 @@ function AnimatedLink({
         onClick={(e) => {
           e.preventDefault();
           onClick();
-          // Small timeout so the menu closes visually before/while scrolling starts
           setTimeout(() => {
             smoothScrollTo(href);
           }, 300);
         }}
-        className="block"
-        style={{ textDecoration: "none", width: "fit-content" }}
+        className="block no-underline w-fit"
       >
-        <div ref={textWrapperRef} className="flex flex-col" style={{ transform: "translateY(0%)" }}>
+        <motion.div 
+          className="flex flex-col transform-gpu"
+          initial={{ y: 0 }}
+          whileHover={{ y: "-50%" }}
+          transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+        >
           <span className="text-neutral-light-lighter block">{name}</span>
           <span className="text-accent-coral-base block">{name}</span>
-        </div>
+        </motion.div>
       </a>
-    </div>
+    </motion.div>
   );
 }
 
@@ -100,7 +76,6 @@ export default function Navigation() {
   const linksRef = useRef<(HTMLAnchorElement | null)[]>([]);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-  // Initial setup
   useEffect(() => {
     if (overlayRef.current) {
       gsap.set(overlayRef.current, { clipPath: "circle(0% at calc(100% - 4rem) 4rem)" });
@@ -108,7 +83,6 @@ export default function Navigation() {
     }
   }, []);
 
-  // Animation on open/close
   useEffect(() => {
     if (!overlayRef.current) return;
 
@@ -154,25 +128,17 @@ export default function Navigation() {
         onClick={() => setIsOpen(!isOpen)}
         data-cursor="pointer"
         data-magnetic
-        className="fixed top-8 right-8 z-[100] flex h-16 w-16 items-center justify-center rounded-full bg-neutral-dark-base text-neutral-light-lighter transition-all duration-300 hover:scale-110"
-        style={{
-          border: "none",
-          mixBlendMode: isOpen ? "normal" : "difference",
-          cursor: "none" // managed by CustomCursor
-        }}
+        className={cn(
+          "fixed top-8 right-8 z-[100] flex h-16 w-16 items-center justify-center rounded-full bg-neutral-dark-base text-neutral-light-lighter transition-all duration-300 hover:scale-110 border-none cursor-none",
+          !isOpen && "mix-blend-difference"
+        )}
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
       <div
         ref={overlayRef}
-        // Change from highly bright bg-neutral-light-base to a darker elegant theme
-        className="fixed top-0 left-0 z-[99] flex h-screen w-full flex-col justify-center px-8 sm:px-16 md:px-32"
-        style={{
-          backgroundColor: "rgba(5, 5, 5, 0.95)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-        }}
+        className="fixed top-0 left-0 z-[99] flex h-screen w-full flex-col justify-center px-8 sm:px-16 md:px-32 bg-neutral-dark-darker/95 backdrop-blur-xl"
       >
         <nav className="flex flex-col gap-4 sm:gap-8">
           {links.map((link, i) => (

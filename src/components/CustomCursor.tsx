@@ -114,19 +114,7 @@ export default function CustomCursor() {
       `}} />
       <div 
         ref={cursorRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "22px",
-          height: "22px",
-          backgroundColor: "#ffffff",
-          borderRadius: "50%",
-          pointerEvents: "none",
-          zIndex: 9999,
-          mixBlendMode: "difference",
-          willChange: "transform"
-        }}
+        className="fixed top-0 left-0 w-[22px] h-[22px] bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference will-change-transform"
       />
     </>
   );

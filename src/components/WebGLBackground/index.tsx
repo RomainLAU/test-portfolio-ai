@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-// @ts-ignore
 import VERT_SRC from "./shaders/vertex.glsl";
-// @ts-ignore
 import FRAG_SRC from "./shaders/fragment.glsl";
 
 // WebGL2 Background with 'Shadow Void' cursor trail
@@ -55,7 +53,7 @@ export default function WebGLBackground() {
     window.addEventListener("resize", resize);
 
     let raf: number;
-    let start = performance.now();
+    const start = performance.now();
 
     const render = (now: number) => {
       const t = (now - start) * 0.001;
@@ -105,16 +103,7 @@ export default function WebGLBackground() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 0,
-        pointerEvents: "none",
-        display: "block",
-      }}
+      className="fixed inset-0 w-full h-full z-0 pointer-events-none block"
     />
   );
 }

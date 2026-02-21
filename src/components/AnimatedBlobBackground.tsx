@@ -72,30 +72,19 @@ export default function AnimatedBlobBackground() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      style={{
-        position: "absolute",
-        inset: 0,
-        overflow: "hidden",
-        zIndex: 0,
-        pointerEvents: "none",
-      }}
+      className="absolute inset-0 overflow-hidden z-0 pointer-events-none"
     >
       {BLOBS.map((cfg, i) => (
         <div
           key={i}
           ref={el => { blobsRef.current[i] = el; }}
+          className="absolute rounded-full blur-[90px] opacity-18 -translate-x-1/2 -translate-y-1/2 will-change-transform"
           style={{
-            position: "absolute",
             left: cfg.x,
             top: cfg.y,
             width: cfg.size,
             height: cfg.size,
-            borderRadius: "50%",
             background: cfg.color,
-            filter: "blur(90px)",
-            opacity: 0.18,
-            transform: "translate(-50%, -50%)",
-            willChange: "transform",
           }}
         />
       ))}

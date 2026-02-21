@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { ReactLenis } from "lenis/react";
-import gsap from "gsap";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {

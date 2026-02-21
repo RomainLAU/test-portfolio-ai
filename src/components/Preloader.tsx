@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { Typography } from "@/components/ui/Typography";
 
 export default function Preloader() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,53 +66,27 @@ export default function Preloader() {
   return (
     <div 
       ref={containerRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#000000", // pure black for max contrast during wipe
-        color: "var(--neutral-light-lighter)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0 5vw",
-        zIndex: 9998,
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
-      }}
+      className="fixed inset-0 bg-black text-neutral-light-lighter flex items-center justify-between px-[5vw] z-[9998]"
+      style={{ clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)" }}
     >
-      {/* Explicit line height and padding bottom to save the 'g' descender */}
-      <div style={{ overflow: "visible", paddingBottom: "0.2em" }}>
-        <span 
+      <div className="overflow-visible pb-[0.2em]">
+        <Typography
+          variant="h3"
+          italic
           ref={textRef}
-          style={{
-            display: "inline-block",
-            fontSize: "clamp(2rem, 5vw, 4rem)",
-            fontWeight: 700,
-            letterSpacing: "-0.03em",
-            color: "var(--neutral-light-darker)",
-            fontFamily: "var(--font-display), Georgia, serif",
-            fontStyle: "italic",
-            lineHeight: 1.2,
-          }}
+          className="m-0 text-neutral-light-darker leading-[1.2] inline-block"
         >
           Loading Details.
-        </span>
+        </Typography>
       </div>
       <div>
-        <span 
-          style={{
-            fontSize: "clamp(4rem, 12vw, 10rem)",
-            fontWeight: 900,
-            color: "var(--accent-perv-base)",
-            fontFamily: "var(--font-body), Arial, sans-serif",
-            lineHeight: 1,
-            display: "inline-block",
-          }}
+        <Typography
+          variant="h1"
+          font="body"
+          className="font-black text-accent-perv-base leading-none m-0 inline-block"
         >
           <span ref={numberRef}>0</span>%
-        </span>
+        </Typography>
       </div>
     </div>
   );

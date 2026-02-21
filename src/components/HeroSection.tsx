@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Button } from "@/components/ui/Button";
+import { Typography } from "@/components/ui/Typography";
 
 // Smooth scroll helper — Lenis intercepts `scrollIntoView` automatically
 function smoothScrollTo(href: string) {
@@ -16,8 +18,8 @@ function smoothScrollTo(href: string) {
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const line1Ref = useRef<HTMLDivElement>(null);
-  const line2Ref = useRef<HTMLDivElement>(null);
+  const line1Ref = useRef<HTMLHeadingElement>(null);
+  const line2Ref = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
@@ -59,113 +61,57 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      style={{
-        position: "relative",
-        height: "100vh",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        padding: "0 5vw",
-        // Transparent so the root WebGL background shows through
-        backgroundColor: "transparent",
-        overflow: "hidden",
-      }}
+      className="relative h-screen w-full flex flex-col justify-center px-[5vw] bg-transparent overflow-hidden"
     >
       {/* Hero Content */}
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ overflow: "hidden", padding: "4px 0" }}>
-          <h1
+      <div className="relative z-10">
+        <div className="overflow-hidden py-1">
+          <Typography
+            as="h1"
+            variant="h1"
+            italic
+            className="m-0 text-neutral-light-lighter"
             ref={line1Ref}
-            style={{
-              fontSize: "clamp(3.5rem, 13vw, 11rem)",
-              fontWeight: 400,
-              margin: 0,
-              lineHeight: 0.9,
-              letterSpacing: "-0.03em",
-              color: "var(--neutral-light-lighter)",
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontStyle: "italic",
-            }}
           >
             Romain
-          </h1>
+          </Typography>
         </div>
-        <div style={{ overflow: "hidden", padding: "4px 0" }}>
-          <h1
+        <div className="overflow-hidden py-1">
+          <Typography
+            as="h1"
+            variant="h1"
+            className="m-0 text-accent-coral-base"
             ref={line2Ref}
-            style={{
-              fontSize: "clamp(3.5rem, 13vw, 11rem)",
-              fontWeight: 400,
-              margin: 0,
-              lineHeight: 0.9,
-              letterSpacing: "-0.03em",
-              color: "var(--accent-coral-base)",
-              fontFamily: "var(--font-display), Georgia, serif",
-            }}
           >
             Laurent.
-          </h1>
+          </Typography>
         </div>
 
-        <div
-          style={{
-            marginTop: "3rem",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            width: "100%",
-          }}
-        >
-          <p
+        <div className="mt-12 flex justify-between items-end w-full">
+          <Typography
+            variant="p"
+            className="max-w-[400px] m-0 text-neutral-light-darker"
             ref={subtitleRef}
-            style={{
-              fontSize: "clamp(0.95rem, 1.8vw, 1.4rem)",
-              maxWidth: "400px",
-              color: "var(--neutral-light-darker)",
-              margin: 0,
-              lineHeight: 1.6,
-              fontFamily: "var(--font-body), Arial, sans-serif",
-              fontWeight: 300,
-            }}
           >
             Creative Frontend Developer — crafting digital experiences with{" "}
-            <em style={{ color: "var(--neutral-light-base)", fontStyle: "italic" }}>
+            <em className="text-neutral-light-base italic not-italic font-display">
               motion, depth, and performance
             </em>{" "}
             in mind.
-          </p>
+          </Typography>
 
           <div ref={ctaRef}>
-            <a
+            <Button
               href="#work"
-              data-cursor="pointer"
-              data-magnetic
+              magnetic
+              withArrow
               onClick={(e) => {
                 e.preventDefault();
                 smoothScrollTo("#work");
               }}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.6rem",
-                padding: "0.9rem 2rem",
-                borderRadius: "9999px",
-                border: "1px solid rgba(255,255,255,0.15)",
-                background: "rgba(255,255,255,0.04)",
-                backdropFilter: "blur(8px)",
-                color: "var(--neutral-light-lighter)",
-                textDecoration: "none",
-                fontSize: "0.9rem",
-                fontWeight: 500,
-                letterSpacing: "0.05em",
-                textTransform: "uppercase",
-                transition: "all 0.3s ease",
-              }}
             >
               View Work
-              <span style={{ transform: "rotate(45deg)", display: "inline-block" }}>↗</span>
-            </a>
+            </Button>
           </div>
         </div>
       </div>
