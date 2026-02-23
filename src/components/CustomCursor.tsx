@@ -16,8 +16,14 @@ export default function CustomCursor() {
     let hoveredEl: HTMLElement | null = null;
     let hoveredRect: DOMRect | null = null;
 
-    const xTo = gsap.quickTo(cursor, "x", { duration: 0.4, ease: "power3.out" });
-    const yTo = gsap.quickTo(cursor, "y", { duration: 0.4, ease: "power3.out" });
+    const xTo = gsap.quickTo(cursor, "x", {
+      duration: 0.4,
+      ease: "power3.out",
+    });
+    const yTo = gsap.quickTo(cursor, "y", {
+      duration: 0.4,
+      ease: "power3.out",
+    });
 
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
@@ -63,9 +69,9 @@ export default function CustomCursor() {
     const attachMagnetic = () => {
       // Both data-magnetic (center-pull buttons) and data-cursor="pointer" get magnetic
       const clickables = document.querySelectorAll(
-        '[data-magnetic], [data-cursor="pointer"]:not([data-no-magnet])'
+        '[data-magnetic], [data-cursor="pointer"]:not([data-no-magnet])',
       );
-      clickables.forEach(el => {
+      clickables.forEach((el) => {
         el.addEventListener("mouseenter", handleMouseEnter);
         el.addEventListener("mouseleave", handleMouseLeave);
       });
@@ -75,7 +81,7 @@ export default function CustomCursor() {
     // Initial attach + re-attach after any DOM change (e.g. modal open)
     let clickables = attachMagnetic();
     const observer = new MutationObserver(() => {
-      clickables.forEach(el => {
+      clickables.forEach((el) => {
         el.removeEventListener("mouseenter", handleMouseEnter);
         el.removeEventListener("mouseleave", handleMouseLeave);
       });
@@ -87,7 +93,7 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("cursor:hide", handleCursorHide);
       window.removeEventListener("cursor:show", handleCursorShow);
-      clickables.forEach(el => {
+      clickables.forEach((el) => {
         el.removeEventListener("mouseenter", handleMouseEnter);
         el.removeEventListener("mouseleave", handleMouseLeave);
       });
@@ -101,20 +107,27 @@ export default function CustomCursor() {
       scale: isHovering ? 2.5 : 1,
       opacity: isHidden ? 0 : 1,
       duration: 0.3,
-      ease: "power2.out"
+      ease: "power2.out",
     });
   }, [isHovering, isHidden]);
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         html, body, a, button, input, [role="button"], * {
           cursor: none !important;
         }
-      `}} />
-      <div 
+      `,
+        }}
+      />
+      <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-[22px] h-[22px] bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference will-change-transform"
+        className={`
+          fixed top-0 left-0 w-[22px] h-[22px] bg-white rounded-full
+          pointer-events-none z-top mix-blend-difference will-change-transform
+        `}
       />
     </>
   );

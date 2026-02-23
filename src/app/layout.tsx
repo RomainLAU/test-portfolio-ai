@@ -7,6 +7,8 @@ import Preloader from "@/components/Preloader";
 import Navigation from "@/components/Navigation";
 import WebGLBackground from "@/components/WebGLBackground";
 
+import { ModalProvider } from "@/context/ModalContext";
+
 // Display serif for hero titles
 const dmSerifDisplay = DM_Serif_Display({
   variable: "--font-display",
@@ -24,7 +26,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Romain Laurent | Frontend Developer",
-  description: "Portfolio of Romain Laurent, Frontend Developer specializing in GSAP and creative development.",
+  description:
+    "Portfolio of Romain Laurent, Frontend Developer specializing in GSAP and creative development.",
 };
 
 export default function RootLayout({
@@ -34,16 +37,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dmSerifDisplay.variable} ${inter.variable} antialiased bg-neutral-dark-base text-neutral-light-lighter noise-bg min-h-screen`}
-        style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}>
-        {/* WebGL background fixed at root — persists through all modals/overlays */}
-        <WebGLBackground />
-        <SmoothScroll>
-          <Preloader />
-          <CustomCursor />
-          <Navigation />
-          {children}
-        </SmoothScroll>
+      <body
+        className={`
+          ${dmSerifDisplay.variable}
+          ${inter.variable}
+          antialiased bg-neutral-dark-base text-neutral-light-lighter noise-bg
+          min-h-screen
+        `}
+        style={{ fontFamily: "var(--font-body), system-ui, sans-serif" }}
+      >
+        <ModalProvider>
+          {/* WebGL background fixed at root — persists through all modals/overlays */}
+          <WebGLBackground />
+          <SmoothScroll>
+            <Preloader />
+            <CustomCursor />
+            <Navigation />
+            {children}
+          </SmoothScroll>
+        </ModalProvider>
       </body>
     </html>
   );

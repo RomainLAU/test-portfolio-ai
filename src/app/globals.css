@@ -3,68 +3,87 @@
 :root {
   /* NEUTRES */
   --neutral-dark-lighter: #2a2a2a;
-  --neutral-dark-base:    #111111; /* Quasi-black main background */
-  --neutral-dark-darker:  #050505; /* Deepest black for shadows/borders */
+  --neutral-dark-base: #111111; /* Quasi-black main background */
+  --neutral-dark-darker: #050505; /* Deepest black for shadows/borders */
 
-  --neutral-light-lighter:#ffffff; /* Source Foreground */
-  --neutral-light-base:   #e5e6fe; /* Source Bright Cyan - utilisé comme blanc cassé */
+  --neutral-light-lighter: #ffffff; /* Source Foreground */
+  --neutral-light-base: #e5e6fe; /* Source Bright Cyan - utilisé comme blanc cassé */
   --neutral-light-darker: #8e8e8e; /* Source Bright Black */
 
   /* ACCENTS */
   /* Accent 1 - Mint */
-  --accent-mint-lighter:  #9efbd5;
-  --accent-mint-base:     #3bf1ac; /* Source Accent */
-  --accent-mint-darker:   #2aab7a;
+  --accent-mint-lighter: #9efbd5;
+  --accent-mint-base: #3bf1ac; /* Source Accent */
+  --accent-mint-darker: #2aab7a;
 
   /* Accent 2 - Corail */
   --accent-coral-lighter: #ffc4bd; /* Source Bright Red */
-  --accent-coral-base:    #ff6b6b; /* Source Normal Red */
-  --accent-coral-darker:  #c94545;
+  --accent-coral-base: #ff6b6b; /* Source Normal Red */
+  --accent-coral-darker: #c94545;
 
   /* Accent 3 - Pervenche */
-  --accent-perv-lighter:  #d9daff;
-  --accent-perv-base:     #b6b7ff; /* Source Normal Cyan */
-  --accent-perv-darker:   #7e7fdb;
+  --accent-perv-lighter: #d9daff;
+  --accent-perv-base: #b6b7ff; /* Source Normal Cyan */
+  --accent-perv-darker: #7e7fdb;
 
   /* Accent 4 - Jaune */
-  --accent-yellow-lighter:#fefdd5; /* Source Bright Yellow */
-  --accent-yellow-base:   #ffe85d; /* Source Normal Yellow */
+  --accent-yellow-lighter: #fefdd5; /* Source Bright Yellow */
+  --accent-yellow-base: #ffe85d; /* Source Normal Yellow */
   --accent-yellow-darker: #cdb930;
 
   --background: var(--neutral-light-lighter);
   --foreground: var(--neutral-dark-base);
+
+  /* Z-INDEX LAYERS */
+  --z-below: -10;
+  --z-base: 0;
+  --z-content: 10;
+  --z-overlay: 20;
+  --z-nav: 100;
+  --z-modal: 200;
+  --z-top: 500;
 }
 
 @theme inline {
   --color-neutral-dark-lighter: var(--neutral-dark-lighter);
   --color-neutral-dark-base: var(--neutral-dark-base);
   --color-neutral-dark-darker: var(--neutral-dark-darker);
-  
+
   --color-neutral-light-lighter: var(--neutral-light-lighter);
   --color-neutral-light-base: var(--neutral-light-base);
   --color-neutral-light-darker: var(--neutral-light-darker);
-  
+
   --color-accent-mint-lighter: var(--accent-mint-lighter);
   --color-accent-mint-base: var(--accent-mint-base);
   --color-accent-mint-darker: var(--accent-mint-darker);
-  
+
   --color-accent-coral-lighter: var(--accent-coral-lighter);
   --color-accent-coral-base: var(--accent-coral-base);
   --color-accent-coral-darker: var(--accent-coral-darker);
-  
+
   --color-accent-perv-lighter: var(--accent-perv-lighter);
   --color-accent-perv-base: var(--accent-perv-base);
   --color-accent-perv-darker: var(--accent-perv-darker);
-  
+
   --color-accent-yellow-lighter: var(--accent-yellow-lighter);
   --color-accent-yellow-base: var(--accent-yellow-base);
   --color-accent-yellow-darker: var(--accent-yellow-darker);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --z-index-below: var(--z-below);
+  --z-index-base: var(--z-base);
+  --z-index-content: var(--z-content);
+  --z-index-overlay: var(--z-overlay);
+  --z-index-nav: var(--z-nav);
+  --z-index-modal: var(--z-modal);
+  --z-index-top: var(--z-top);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -86,7 +105,8 @@ body {
 }
 
 /* Premium Typography System */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-display), Georgia, serif;
   letter-spacing: -0.03em;
 }
@@ -118,7 +138,8 @@ a {
 }
 
 /* Lenis Recommended CSS */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 .lenis.lenis-smooth {
@@ -149,7 +170,10 @@ html.lenis, html.lenis body {
 .noise-bg::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.04;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");

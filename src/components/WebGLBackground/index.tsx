@@ -22,7 +22,11 @@ export default function WebGLBackground() {
 
     const buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
+      gl.STATIC_DRAW,
+    );
 
     gl.useProgram(prog);
     const posLoc = gl.getAttribLocation(prog, "vertexPosition");
@@ -30,11 +34,15 @@ export default function WebGLBackground() {
     gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
     const uTime = gl.getUniformLocation(prog, "time");
-    const uRes  = gl.getUniformLocation(prog, "resolution");
+    const uRes = gl.getUniformLocation(prog, "resolution");
     const uMouseHistory = gl.getUniformLocation(prog, "mouseTrailPoints");
-    const uMouseAges    = gl.getUniformLocation(prog, "mouseTrailAges");
+    const uMouseAges = gl.getUniformLocation(prog, "mouseTrailAges");
 
-    const mouseHistory = Array.from({ length: TRAIL_COUNT }, () => ({ x: 0.5, y: 0.5, age: 0 }));
+    const mouseHistory = Array.from({ length: TRAIL_COUNT }, () => ({
+      x: 0.5,
+      y: 0.5,
+      age: 0,
+    }));
     let targetX = 0.5;
     let targetY = 0.5;
 
@@ -66,17 +74,17 @@ export default function WebGLBackground() {
       // Trail propagation with MUCH slower decay to ensure persistence
       for (let i = TRAIL_COUNT - 1; i > 0; i--) {
         // Points follow each other closely
-        mouseHistory[i].x += (mouseHistory[i-1].x - mouseHistory[i].x) * 0.7;
-        mouseHistory[i].y += (mouseHistory[i-1].y - mouseHistory[i].y) * 0.7;
+        mouseHistory[i].x += (mouseHistory[i - 1].x - mouseHistory[i].x) * 0.7;
+        mouseHistory[i].y += (mouseHistory[i - 1].y - mouseHistory[i].y) * 0.7;
         // Age decays slowly to keep a visible trail length
-        mouseHistory[i].age = mouseHistory[i-1].age * 1; 
+        mouseHistory[i].age = mouseHistory[i - 1].age * 1;
       }
 
       const flatHistory = new Float32Array(TRAIL_COUNT * 2);
       const flatAges = new Float32Array(TRAIL_COUNT);
-      for(let i=0; i<TRAIL_COUNT; i++) {
-        flatHistory[i*2] = mouseHistory[i].x;
-        flatHistory[i*2+1] = mouseHistory[i].y;
+      for (let i = 0; i < TRAIL_COUNT; i++) {
+        flatHistory[i * 2] = mouseHistory[i].x;
+        flatHistory[i * 2 + 1] = mouseHistory[i].y;
         flatAges[i] = mouseHistory[i].age;
       }
 
@@ -103,7 +111,7 @@ export default function WebGLBackground() {
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      className="fixed inset-0 w-full h-full z-0 pointer-events-none block"
+      className="fixed inset-0 w-full h-full z-below pointer-events-none block"
     />
   );
 }

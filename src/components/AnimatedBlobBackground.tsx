@@ -13,10 +13,38 @@ interface BlobConfig {
 }
 
 const BLOBS: BlobConfig[] = [
-  { x: "10%",  y: "30%", size: "500px", color: "var(--accent-mint-base)",  duration: 8,  delay: 0    },
-  { x: "60%",  y: "15%", size: "400px", color: "var(--accent-coral-base)", duration: 10, delay: 1.5  },
-  { x: "35%",  y: "60%", size: "600px", color: "var(--accent-perv-base)",  duration: 12, delay: 0.8  },
-  { x: "75%",  y: "55%", size: "350px", color: "var(--accent-mint-darker)", duration: 9, delay: 2    },
+  {
+    x: "10%",
+    y: "30%",
+    size: "500px",
+    color: "var(--accent-mint-base)",
+    duration: 8,
+    delay: 0,
+  },
+  {
+    x: "60%",
+    y: "15%",
+    size: "400px",
+    color: "var(--accent-coral-base)",
+    duration: 10,
+    delay: 1.5,
+  },
+  {
+    x: "35%",
+    y: "60%",
+    size: "600px",
+    color: "var(--accent-perv-base)",
+    duration: 12,
+    delay: 0.8,
+  },
+  {
+    x: "75%",
+    y: "55%",
+    size: "350px",
+    color: "var(--accent-mint-darker)",
+    duration: 9,
+    delay: 2,
+  },
 ];
 
 export default function AnimatedBlobBackground() {
@@ -72,13 +100,18 @@ export default function AnimatedBlobBackground() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="absolute inset-0 overflow-hidden z-0 pointer-events-none"
+      className="absolute inset-0 overflow-hidden z-below pointer-events-none"
     >
       {BLOBS.map((cfg, i) => (
         <div
           key={i}
-          ref={el => { blobsRef.current[i] = el; }}
-          className="absolute rounded-full blur-[90px] opacity-18 -translate-x-1/2 -translate-y-1/2 will-change-transform"
+          ref={(el) => {
+            blobsRef.current[i] = el;
+          }}
+          className={`
+            absolute rounded-full blur-[90px] opacity-18 -translate-x-1/2
+            -translate-y-1/2 will-change-transform
+          `}
           style={{
             left: cfg.x,
             top: cfg.y,
