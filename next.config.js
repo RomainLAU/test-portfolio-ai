@@ -15,7 +15,6 @@ const nextConfig = {
     return config;
   },
   turbopack: {
-    root: "/Users/rlaurent/Perso/test-portfolio-ai",
     rules: {
       "*.glsl": {
         loaders: ["raw-loader"],
